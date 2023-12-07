@@ -1,12 +1,12 @@
 /** @type {import("next").NextConfig} */
 
 const nextConfig = {
-  reactStrictMode: true,
+  reactStrictMode: false,
   async rewrites() {
     return [{
-      source: "/j/search_subjects",
-      destination: "https://movie.douban.com/j/search_subjects",
-    }];
+      source: "/api/:path*",
+      destination: "http://localhost:18652/api/:path*"
+    }]
   },
   images: {
     remotePatterns: [{
